@@ -41,3 +41,5 @@ tonicVersion: latest
 #   authServerId: <auth-server-id>
 #   groupFilter: .*Tonic.*
   
+serviceAccount:
+  create: false
