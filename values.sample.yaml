@@ -42,4 +42,4 @@ tonicVersion: latest
 #   groupFilter: .*Tonic.*
   
 serviceAccount:
-  create: false
+  create: true
