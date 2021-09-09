@@ -22,6 +22,8 @@ enableLogCollection: false
 # enableSparkSupport will install the necessary additional components to allow Tonic to connect to your Spark instance
 # enableSparkSupport: true
 
+enableStackCollection: true
+
 # This value will be provided to you by Tonic and will allow you to authenticate against our private docker repository.
 dockerConfigAuth: <docker-config-auth>
 
