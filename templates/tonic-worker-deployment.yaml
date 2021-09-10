@@ -6,6 +6,9 @@ metadata:
   name: tonic-worker
   namespace: {{ .Release.Namespace }}
 spec:
+  resources:
+    limits:
+      memory: "16Gi"
   replicas: {{ .Values.numberOfWorkers }}
   selector:
     matchLabels:
