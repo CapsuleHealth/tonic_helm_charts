@@ -17,9 +17,6 @@ spec:
         app: tonic-worker
     spec:
       containers:
-        resources:
-          limits:
-            memory: "16Gi"
       - env:
         - name: TONIC_DB_DATABASE
           value: {{ .Values.tonicdb.dbname }}
@@ -80,4 +77,7 @@ spec:
       - name: tonicai-build-writer-pull-secret
       serviceAccountName: tonic-worker
       volumes: null
+      resources:
+        limits:
+          memory: "16Gi"
 status: {}
