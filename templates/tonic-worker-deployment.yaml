@@ -61,7 +61,7 @@ spec:
         - containerPort: 443
         resources:
           limits:
-            memory: 16Gi
+            memory: {{quote .Values.memoryLimit }}
         livenessProbe:
           httpGet:
             path: /health
