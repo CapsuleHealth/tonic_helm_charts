@@ -60,6 +60,8 @@ spec:
         - containerPort: 80
         - containerPort: 443
         resources:
+          requests:
+            memory: {{quote .Values.memoryRequestLimit }}
           limits:
             memory: {{quote .Values.memoryLimit }}
         livenessProbe:
