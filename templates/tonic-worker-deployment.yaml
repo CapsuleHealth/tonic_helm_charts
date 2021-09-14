@@ -65,7 +65,7 @@ spec:
           limits:
             memory: {{quote .Values.memoryLimit }}
         livenessProbe:
-          enabled: false
+          enabled: {{quote .Values.enableLivenessProbe }}
           httpGet:
             path: /health
             port: 80
@@ -73,7 +73,7 @@ spec:
           periodSeconds: 10
           timeoutSeconds: 10
         readinessProbe:
-          enabled: false
+          enabled: {{quote .Values.enableReadinessProbe }}
           httpGet:
             path: /health
             port: 80
