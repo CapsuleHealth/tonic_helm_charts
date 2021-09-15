@@ -65,19 +65,19 @@ spec:
           limits:
             memory: {{quote .Values.memoryLimit }}
         livenessProbe:
-          httpGet:
-            path: /health
-            port: 80
-          initialDelaySeconds: 60
-          periodSeconds: 10
-          timeoutSeconds: 10
+          exec:
+            command:
+              - echo
+              - "skipping health check"
+            initialDelaySeconds: 5
+            periodSeconds: 30
         readinessProbe:
-          httpGet:
-            path: /health
-            port: 80
-          initialDelaySeconds: 10
-          periodSeconds: 10
-          timeoutSeconds: 10
+          exec:
+            command:
+              - echo
+              - "skipping health check"
+            initialDelaySeconds: 5
+            periodSeconds: 30
       restartPolicy: Always
       imagePullSecrets:
       - name: tonicai-build-writer-pull-secret
