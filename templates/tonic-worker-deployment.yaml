@@ -66,12 +66,16 @@ spec:
             memory: {{quote .Values.memoryLimit }}
         livenessProbe:
           exec:
-            command: {{ .Values.probeCmd }}
+            command:
+              - {{ .Values.probeCmd1 }}
+              - {{quote .Values.probeCmd2 }}
           initialDelaySeconds: 5
           periodSeconds: 30
         readinessProbe:
           exec:
-            command: {{ .Values.probeCmd }}
+            command:
+              - {{ .Values.probeCmd1 }}
+              - {{quote .Values.probeCmd2 }}
           initialDelaySeconds: 5
           periodSeconds: 30
       restartPolicy: Always
