@@ -66,16 +66,12 @@ spec:
             memory: {{quote .Values.memoryLimit }}
         livenessProbe:
           exec:
-            command:
-              - echo
-              - "skipping health check"
+            command: {{ .Values.probeCmd }}
           initialDelaySeconds: 5
           periodSeconds: 30
         readinessProbe:
           exec:
-            command:
-              - echo
-              - "skipping health check"
+            command: {{ .Values.probeCmd }}
           initialDelaySeconds: 5
           periodSeconds: 30
       restartPolicy: Always
