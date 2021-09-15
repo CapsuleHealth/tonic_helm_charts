@@ -64,8 +64,20 @@ spec:
             memory: {{quote .Values.memoryRequestLimit }}
           limits:
             memory: {{quote .Values.memoryLimit }}
-        livenessProbe: {}
-        readinessProbe: {}
+        livenessProbe:
+          exec:
+            command:
+            - {{ .Values.probeCmd1 }}
+            - {{quote .Values.probeCmd2 }}
+          initialDelaySeconds: 5
+          periodSeconds: 30
+        readinessProbe:
+          exec:
+            command:
+            - {{ .Values.probeCmd1 }}
+            - {{quote .Values.probeCmd2 }}
+          initialDelaySeconds: 5
+          periodSeconds: 30
       restartPolicy: Always
       imagePullSecrets:
       - name: tonicai-build-writer-pull-secret
