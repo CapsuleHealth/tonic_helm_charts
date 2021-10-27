@@ -100,7 +100,7 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 10
       restartPolicy: Always
-      serviceAccountName: ""
+      serviceAccountName: tonic-worker
       imagePullSecrets:
       - name: tonicai-build-writer-pull-secret
       volumes: null
