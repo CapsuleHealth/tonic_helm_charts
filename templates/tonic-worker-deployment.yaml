@@ -53,6 +53,16 @@ spec:
           value: https://tonic-spark-helper:5501
         - name: ENABLE_STACK_COLLECTION
           value: {{quote .Values.enableStackCollection }}
+        - name: TONIC_LAMBDA_ROLE
+          value: arn:aws:iam::874873923888:role/tonic-lambda-role
+        - name: TONIC_LAMBDA_TIMEOUT
+          value: 900
+        - name: TONIC_LAMBDA_MEMORY_SIZE
+          value: 4096
+        - name: TONIC_LAMBDA_ECR_REPO_NAME
+          value: 874873923888.dkr.ecr.us-east-1.amazonaws.com/tonic-redshift-lambda:308
+        - name: TONIC_LAMBDA_SQS_VISIBILITY_TIMEOUT
+          value: 900
         image: quay.io/tonicai/tonic_worker:{{ .Values.tonicVersion }}
         imagePullPolicy: ""
         name: tonic-worker
