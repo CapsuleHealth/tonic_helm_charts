@@ -54,7 +54,7 @@ spec:
         - name: ENABLE_STACK_COLLECTION
           value: {{quote .Values.enableStackCollection }}
         - name: TONIC_LAMBDA_ROLE
-          value: arn:aws:iam::874873923888:role/tonic-lambda-role
+          value: tonic-lambda-role
         - name: TONIC_LAMBDA_TIMEOUT
           value: 900
         - name: TONIC_LAMBDA_MEMORY_SIZE
