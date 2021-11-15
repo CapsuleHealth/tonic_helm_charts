@@ -9,6 +9,7 @@ metadata:
     kubernetes.io/ingress.class: nginx-production-private
     kubernetes.io/tls-acme: "true"
     certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
 spec:
   tls:
     - hosts:
