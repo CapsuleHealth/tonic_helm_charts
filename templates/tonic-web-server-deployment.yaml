@@ -34,7 +34,7 @@ spec:
         - name: TONIC_DB_HOST
           value: {{ .Values.tonicdb.host }}
         - name: TONIC_STATISTICS_SEED
-          value: {{quote .Values.tonicStatisticsSeed }}
+          value: {{ .Values.tonicStatisticsSeed }}
         - name: ENABLE_LOG_COLLECTION
           value: {{quote .Values.enableLogCollection }}
         - name: ENVIRONMENT_NAME
