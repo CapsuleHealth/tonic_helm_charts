@@ -33,9 +33,9 @@ spec:
           value: {{ .Values.tonicdb.sslMode }}
         - name: TONIC_DB_HOST
           value: {{ .Values.tonicdb.host }}
-          {{- if .Values.tonicStatisticsSeed }}
+          {{- if .Values.tonicStatsSeed }}
         - name: TONIC_STATISTICS_SEED
-          value: {{quote .Values.tonicStatisticsSeed }}
+          value: {{quote .Values.tonicStatsSeed }}
           {{- end }}
         - name: ENABLE_LOG_COLLECTION
           value: {{quote .Values.enableLogCollection }}

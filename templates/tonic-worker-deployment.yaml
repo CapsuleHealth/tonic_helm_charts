@@ -39,9 +39,9 @@ spec:
           value: "5"
         - name: TONIC_WRITE_PARALLELISM
           value: "5"
-          {{- if .Values.tonicStatisticsSeed }}
+          {{- if .Values.tonicStatsSeed }}
         - name: TONIC_STATISTICS_SEED
-          value: {{quote .Values.tonicStatisticsSeed }}
+          value: {{quote .Values.tonicStatsSeed }}
           {{- end }}
         - name: ENABLE_LOG_COLLECTION
           value: {{quote .Values.enableLogCollection }}
