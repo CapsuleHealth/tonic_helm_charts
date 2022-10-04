@@ -10,6 +10,9 @@ metadata:
     kubernetes.io/tls-acme: "true"
     certmanager.k8s.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.nginxBodySize }}
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: {{ .Values.nginxConnectTimeout }}
+    nginx.ingress.kubernetes.io/proxy-send-timeout: {{ .Values.nginxSendTimeout}}
+    nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.nginxReadTimeout }}
 spec:
   tls:
     - hosts:
