@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: tonic-web-server
@@ -6,11 +6,11 @@ metadata:
   labels:
     app: tonic-web-server
   annotations:
-    kubernetes.io/ingress.class: nginx-production-private
     kubernetes.io/tls-acme: "true"
     certmanager.k8s.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.nginxBodySize }}
 spec:
+  ingressClassName: nginx-production-private
   tls:
     - hosts:
         - tonic.internal.capsule.com
@@ -20,6 +20,9 @@ spec:
       http:
         paths:
           - path: /
+            pathType: ImplementationSpecific
             backend:
-              serviceName: tonic-web-server
-              servicePort: http
+              service:
+                name: tonic-web-server
+                port:
+                  name: http
